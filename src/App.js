@@ -7,9 +7,10 @@ import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
-import Card from "@material-ui/core/Card";
+// import Card from "@material-ui/core/Card";
 import IconButton from "@material-ui/core/IconButton";
-import DeleteIcon from "@material-ui/icons/Delete";
+// import DeleteIcon from "@material-ui/icons/Delete";
+import ClearIcon from "@material-ui/icons/Clear";
 import PlusOneIcon from "@material-ui/icons/PlusOne";
 import RemoveIcon from "@material-ui/icons/Remove";
 import Button from "@material-ui/core/Button";
@@ -22,7 +23,9 @@ const useStyles = makeStyles((theme) => ({
   card: {
     float: "left",
     width: "60%",
-    marginBottom: 3
+    marginBottom: 3,
+    borderStyle: "groove",
+    borderRadius: "5px"
   },
   avatar: {
     float: "left",
@@ -55,7 +58,7 @@ export default function App() {
     if (step === 1) {
       //Delete
       let temp = itemArr;
-      swal(temp[id][1] + " !", "Item has been deleted!", "error");
+      swal(temp[id][1] + " !", "Item has been deleted!", "warning");
       temp.splice(id, 1);
       store(temp);
       setItemArr(getItems(myObj)[0]);
@@ -115,7 +118,8 @@ export default function App() {
           )}
           {itemArr.map((number, index) => (
             <div style={{ marginBottom: "10px" }} key={number[0]}>
-              <Card className={classes.card}>
+              {/* <Card className={classes.card}> */}
+              <div className={classes.card}>
                 <Avatar
                   className={classes.avatar}
                   alt="Cindy Baker"
@@ -133,9 +137,10 @@ export default function App() {
                   className={classes.icoBtn}
                   aria-label="delete"
                 >
-                  <DeleteIcon />
+                  <ClearIcon />
                 </IconButton>
-              </Card>
+              </div>
+              {/* </Card> */}
               <IconButton
                 style={{
                   float: "left",
