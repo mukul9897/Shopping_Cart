@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #f6f8f9;
+}
+
+.container {
+  background-color: "#e2e8ec";
+  height: 100%;
+}
+
+h3 {
+  font-family: "Oswald", sans-serif;
+}
+h4 {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .Items {
+    position: absolute;
+    margin-top: 230px;
+    width: 90%;
+    min-height: 100px;
+    overflow: hidden;
+  }
+
+  .Bill {
+    margin-left: calc(45%);
+    transform: translateX(-50%);
+    margin-top: 10px;
+    width: 300px;
+    position: absolute;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .Items {
+    width: 60%;
+    height: 100%;
+    float: left;
+  }
+  .Bill {
+    width: 300px;
+    margin-top: 70px;
+    float: left;
+  }
+  .container {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .Bill {
+    margin-left: 20px;
+  }
+}
